@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Dylan's Car Lot</title>
+
+    <link href="../static/css/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet" media="screen"
+        th:href="@{/css/bootstrap-3.3.4-dist/css/bootstrap.min.css}"/>
+
+    <script src="../static/js/jquery-2.1.4.min.js"
+        th:src="@{/js/jquery-2.1.4.min.js}"></script>
+
+    <link th:href="@{/css/custom.css}" rel="stylesheet" media="screen"/>
+    <style th:remove="all">
+        .jumbotron {
+            background: url("../static/banner.jpg") no-repeat center center;
+            height: 350px;
+            color: white;
+            text-shadow: #444 0 1px 1px;
+        }
+        body {
+            color: #2b3636;
+            font-family: "Proxima";
+        }
+        body {
+            color: #333;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857;
+        }
+        .row {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        *::before, *::after {
+            box-sizing: border-box;
+        }
+        *::before, *::after {
+            box-sizing: border-box;
+        }
+        .view-directory .car-listing {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        .car-listing {
+            background-color: #f7f7f7;
+            border: 1px solid #f1f3f0;
+            border-radius: 9px;
+            box-shadow: 0 1px #f1f3f0;
+            cursor: pointer;
+            height: 390px;
+            margin-bottom: 50px;
+            padding: 0;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        .car-listing .car-box-image-container {
+            max-height: 208px;
+            overflow: hidden;
+        }
+        .car-listing .car-box-image-container .car-box-image {
+            border-bottom: 1px solid #ededed;
+            border-top-left-radius: 9px;
+            border-top-right-radius: 9px;
+            display: block;
+            margin: auto;
+            width: 100%;
+        }
+        img {
+            vertical-align: middle;
+        }
+        img {
+            border: 0 none;
+        }
+        .car-listing .car-listing-title {
+            color: #6cb44a;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 25px;
+            max-height: 70px;
+            overflow: hidden;
+            padding: 16px 16px 4px;
+        }
+        .car-listing .car-listing-subtitle {
+            color: #586f6f;
+            font-size: 14px;
+            font-weight: 200;
+            max-height: 65px;
+            overflow: hidden;
+            padding: 5px 16px;
+        }
+        .car-listing .car-listing-extra-info .car-price {
+            color: #6eae50 !important;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 34px;
+            padding-right: 10px;
+            text-align: right;
+        }
+        .car-listing .car-listing-extra-info .car-author-name {
+            font-size: 15px;
+            font-weight: 200;
+            line-height: 30px;
+            max-height: 30px;
+            overflow: hidden;
+            padding-left: 5px;
+        }
+        .car-listing .car-listing-extra-info .car-bundle {
+            font-size: 15px;
+            font-weight: 200;
+            line-height: 30px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Dylan's Car Lot</h1>
+        <p class="lead">Online Store for Exotic Car Sales</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Inventory</h1>
+        </div>
+    </div>
+
+    <div class="row car-list list">
+        <div class="col-md-4">
+            <div class="car-listing">
+                <div class="row">
+                    <a href="/product/1">
+                        <div class="col-lg-12">
+                            <div class="car-box-image-container">
+                                <img role="presentation"
+                                    src="../static/cayman.jpg"
+                                     th:src="@{cayman.jpg}"
+                                     class="car-box-image"/>
+                            </div>
+                            <div class="car-listing-title">
+                                Porsche Cayman GTS
+                            </div>
+                            <div class="car-listing-subtitle">
+                                Insatiable. The new 718 GTS models.
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row car-listing-extra-info col-xs-12">
+                    <div class="col-xs-8">
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="small car-price">
+                            FREE
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="car-listing">
+                <div class="row">
+                    <a data-role="car-box-link" href="/product/2">
+                        <div class="col-lg-12">
+                            <div class="car-box-image-container">
+                                <img role="presentation"
+                                     src="../static/cayman.jpg"
+                                     th:src="@{c8.jpg}"
+                                     class="car-box-image"/>
+                            </div>
+                            <div class="car-listing-title">
+                                Mid-Engine Chevy Corvette C8
+                            </div>
+                            <div class="car-listing-subtitle">
+                                A mid-engine masterpiece
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row car-listing-extra-info col-xs-12">
+                    <div class="col-xs-8">
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="small car-price">
+                            $99
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="car-listing">
+                <div class="row">
+                    <a data-role="car-box-link" href="/product/3">
+                        <div class="col-lg-12">
+                            <div class="car-box-image-container">
+                                <img role="presentation"
+                                     src="../static/cayman.jpg"
+                                     th:src="@{supra.jpg}"
+                                     class="car-box-image"/>
+                            </div>
+                            <div class="car-listing-title">
+                                2020 GR Supra
+                            </div>
+                            <div class="car-listing-subtitle">
+                                The legend. Reborn.
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row car-listing-extra-info col-xs-12">
+                    <div class="col-xs-8">
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="small car-price">
+                            $99
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="car-listing">
+                <div class="row">
+                    <a data-role="car-box-link" href="/product/4">
+                        <div class="col-lg-12">
+                            <div class="car-box-image-container">
+                                <img role="presentation"
+                                     src="../static/cayman.jpg"
+                                     th:src="@{boss429.jpg}"
+                                     class="car-box-image"/>
+                            </div>
+                            <div class="car-listing-title">
+                                1969 Ford Mustang Boss 429 Fastback
+                            </div>
+                            <div class="car-listing-subtitle">
+                                Timeless Classic
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row car-listing-extra-info col-xs-12">
+                    <div class="col-xs-8">
+
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="small car-price">
+                            $15
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="car-listing">
+                <div class="row">
+                    <a data-role="car-box-link" href="/product/5">
+                        <div class="col-lg-12">
+                            <div class="car-box-image-container">
+                                <img role="presentation"
+                                     src="../static/cayman.jpg"
+                                     th:src="@{ford.jpg}"
+                                     class="car-box-image"/>
+                            </div>
+                            <div class="car-listing-title">
+                                Ford GT
+                            </div>
+                            <div class="car-listing-subtitle">
+                                Super light. Super Strong. You've Never Seen Anything Like This Before.
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row car-listing-extra-info col-xs-12">
+                    <div class="col-xs-8">
+                        <div class="small car-bundle">
+
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="small car-price">
+                            $147
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="car-listing">
+                <div class="row">
+                    <a data-role="car-box-link" href="/product/6">
+                        <div class="col-lg-12">
+                            <div class="car-box-image-container">
+                                <img role="presentation"
+                                     src="../static/cayman.jpg"
+                                     th:src="@{honda.jpg}"
+                                     class="car-box-image"/>
+                            </div>
+                            <div class="car-listing-title">
+                                Honda CB1000R Neo Sports Cafe
+                            </div>
+                            <div class="car-listing-subtitle">
+                                Performance has a style all it's own
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="row car-listing-extra-info col-xs-12">
+                    <div class="col-xs-8">
+
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="small car-price">
+                            $15
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

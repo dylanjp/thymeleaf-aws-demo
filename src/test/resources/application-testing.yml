@@ -1,0 +1,13 @@
+spring:
+  main:
+    banner-mode: "off"
+
+lds:
+  http-client:
+    trust-strategy: trust_self_signed
+    cookie-policy: standard
+    enable-redirect-handling: false
+    error-handler: "none"
+    singleton: false
+    csrf:
+      enabled: false

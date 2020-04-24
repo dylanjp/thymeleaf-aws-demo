@@ -1,0 +1,18 @@
+---
+anthill-cf-org:   "Demo"
+anthill-cf-space: "demothymeleaf#non-prod"
+anthill-cf-name:  "api.cf.lds.org"
+
+applications:
+  - name: "demothymeleaf"
+    path: "../target/demothymeleaf.jar"
+    buildpacks: ["java11"]
+    instances: 2
+    memory: "1G"
+    env:
+      SPRING_PROFILES_ACTIVE: "dev"
+      TZ: "UTC"
+    routes:
+      - route: "demothymeleaf.app-dev.lds.org/api/demothymeleaf"
+    services:
+      - "splunk"
